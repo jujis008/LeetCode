@@ -1,4 +1,4 @@
-package com.wilson.leetcode;
+package com.wilson.leetcode.easy;
 
 import java.util.Scanner;
 
@@ -8,6 +8,7 @@ class ListNode {
 
 	ListNode(int x) {
 		val = x;
+		next = null;
 	}
 }
 
