@@ -21,6 +21,15 @@ package com.wilson.leetcode.easy;
  * Your code should preferably run in O(n) time and use only O(1) memory.
  */
 public class IntersectionOfTwoLinkedLists {
+    class ListNode {
+        int val;
+        ListNode next;
+
+        ListNode(int x) {
+            val = x;
+            next = null;
+        }
+    }
     public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
         if (headA == null || headB == null) return null;
         ListNode p = headA;

@@ -2,21 +2,20 @@ package com.wilson.leetcode.easy;
 
 import java.util.Scanner;
 
-class ListNode {
-	int val;
-	ListNode next;
-
-	ListNode(int x) {
-		val = x;
-		next = null;
-	}
-}
-
 public class AddTwoNumbers {
+	static class ListNode {
+		int val;
+		ListNode next;
+
+		ListNode(int x) {
+			val = x;
+			next = null;
+		}
+	}
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
-		ListNode node1 = null;
-		ListNode node2 = null;
+		ListNode node1;
+		ListNode node2;
 		System.out.println("Please input number for node1: ");
 		int n = scanner.nextInt();
 		node1 = new ListNode(n);
@@ -59,9 +58,7 @@ public class AddTwoNumbers {
 				flag = 1;
 			}
 			l1 = l1.next;
-			if (l2 != null) {
-				l2 = l2.next;
-			}
+			l2 = l2.next;
 			last = flag;
 		}
 		if (l2 != null) {

@@ -21,6 +21,13 @@ import java.util.Stack;
  */
 
 public class AddTwoNumbersII {
+    static class ListNode {
+        int data;
+        ListNode next;
+        ListNode(int x) {
+            this.data = x;
+        }
+    }
     private int carry = 0;
     public ListNode addTwoNumbers(ListNode listNode1, ListNode listNode2) {
         if (listNode1 == null) return listNode2;

@@ -14,6 +14,13 @@ package com.wilson.leetcode.medium;
  * Output: 7 -> 0 -> 8
  */
 public class AddTwoNumbers {
+    static class ListNode {
+        int data;
+        ListNode next;
+        ListNode(int x) {
+            this.data = x;
+        }
+    }
     public ListNode addTwoNumbers(ListNode listNode1, ListNode listNode2) {
         ListNode returnNode = new ListNode(0);
         ListNode p = listNode1;
@@ -61,13 +68,5 @@ public class AddTwoNumbers {
         atn.printList(listNode2);
         atn.printList(listNode);
         atn.printList(listNode1);
-    }
-}
-
-class ListNode {
-    int data;
-    ListNode next;
-    ListNode(int x) {
-        this.data = x;
     }
 }
