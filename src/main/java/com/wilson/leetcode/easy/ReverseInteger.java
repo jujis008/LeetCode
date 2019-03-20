@@ -1,5 +1,7 @@
 package com.wilson.leetcode.easy;
 
+import java.util.UUID;
+
 /**
  * https://leetcode.com/problems/reverse-integer/description/
  *
@@ -51,6 +53,7 @@ public class ReverseInteger {
     }
 
     public static void main(String[] args) {
+        System.out.println(UUID.randomUUID().toString().length());
         System.out.println(new ReverseInteger().reverse2(123));
         System.out.println(new ReverseInteger().reverse2(-123));
         System.out.println(new ReverseInteger().reverse2(-120));

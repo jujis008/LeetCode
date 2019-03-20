@@ -9,7 +9,7 @@ import java.util.List;
  * 思路点拨：可以考虑排序后从小到大开始贪心，当然这里我们只考虑赚钱的影片，亏本的就不要了。
  * Created by i324291 on 2018/4/19.
  */
-public class Bigbusiness {
+public class BigBusiness {
     class Pair implements Comparable<Pair> {
         private int a, b;
 
