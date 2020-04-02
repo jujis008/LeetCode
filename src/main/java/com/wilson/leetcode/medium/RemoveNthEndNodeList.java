@@ -1,6 +1,8 @@
 package com.wilson.leetcode.medium;
 
 
+import com.wilson.leetcode.easy.ListNode;
+
 /**
  * Given a linked list, remove the n-th node from the end of list and return its head.
  *
@@ -30,10 +32,4 @@ public class RemoveNthEndNodeList {
     n[0]--;
     return n[0] == 0 ? head.next : head;
   }
-}
-
-class ListNode {
-  int val;
-  ListNode next;
-  ListNode(int x) { val = x; }
 }
