@@ -1,6 +1,8 @@
 package com.wilson.leetcode.medium;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Comparator;
 import java.util.List;
 
 /**
@@ -29,18 +31,27 @@ import java.util.List;
  */
 public class MergeIntervals {
     public int[][] merge(int[][] intervals) {
-        if (intervals == null || intervals.length == 0) return intervals;
-        final int row = intervals.length;
-        final int col = intervals[0].length;
-        int[][] result = new int[row][col];
-        List<int[]> list = new ArrayList<>();
-        for (int i = 0; i < row; i++) {
-            for(int j = i + 1; j < row - 1; j++) {
-                if (intervals[i][1] >= intervals[j][0] && intervals[j][1] >= intervals[i][0]) {
-
-                }
+        if (intervals == null || intervals.length < 2) return intervals;
+        Arrays.sort(intervals, Comparator.comparingInt(a -> a[0]));
+        List<int[]> result = new ArrayList<>();
+        for (int[] rows : intervals) {
+            if (result.isEmpty() || result.get(result.size() - 1)[1] < rows[0]) result.add(rows);
+            else {
+                result.get(result.size() - 1)[1] = Math.max(result.get(result.size() - 1)[1], rows[1]);
             }
         }
-        return null;
+        return result.toArray(new int[result.size()][]);
+    }
+
+    public static void main(String[] args) {
+        MergeIntervals mi = new MergeIntervals();
+//        int[][] intervals = {{1,4}, {4,5}};
+        int[][] intervals = {{1,3},{2,6},{8,10},{15,18}};
+        for (int[] rows : mi.merge(intervals)) {
+            for (int val : rows) {
+                System.out.print(val + " ");
+            }
+            System.out.println();
+        }
     }
 }
