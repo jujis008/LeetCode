@@ -8,6 +8,11 @@ public class ListNode {
     this.val = val;
   }
 
+  ListNode(int val, ListNode next) {
+    this.val = val;
+    this.next = next;
+  }
+
   public static ListNode buildListNode(int[] data) {
     if (data == null || data.length == 0) return null;
     ListNode head = new ListNode(0);

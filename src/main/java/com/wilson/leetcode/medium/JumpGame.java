@@ -14,6 +14,22 @@ package com.wilson.leetcode.medium;
  * A = [3,2,1,0,4], return false.
  */
 public class JumpGame {
+    public boolean canJump1(int[] nums) {
+        final int len = nums.length;
+        boolean[] f = new boolean[len];
+        f[0] = true;
+        for (int i = 1; i < len; i++) {
+            f[i] = false;
+            for (int j = 0; j < i; j++) {
+                if (f[j] && j + nums[j] >= i) {
+                    f[i] = true;
+                    break;
+                }
+            }
+        }
+        return f[len - 1];
+    }
+
     public boolean canJump(int[] nums) {
         final int len = nums.length;
         int lastPosition = len - 1;
